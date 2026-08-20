@@ -2,27 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Customer;
 
-class DatabaseSeeder extends Seeder
+class CustomerSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-        $users = [
+        $customers = [
             [
                 'name' => 'shourab',
                 'email' => 'shourab.cit.bd@gmail.com',
@@ -34,20 +25,22 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('password'),
             ],
             [
+                'name' => 'Suvash',
+                'email' => 'ctgsuvas@gmail.com',
+                'password' => Hash::make('password'),
+            ],
+            [
                 'name' => 'foyjur',
                 'email' => 'foyjurrafee99@gmail.com',
                 'password' => Hash::make('password'),
-            ]
+            ],
         ];
 
-        foreach($users as $user){
-            User::create($user);
+        foreach ($customers as $customer) {
+            Customer::updateOrCreate(
+                ['email' => $customer['email']],
+                $customer
+            );
         }
-
-        $this->call([
-            CustomerSeeder::class,
-            CategorySeeder::class,
-            ProductSeeder::class,
-        ]);
     }
 }
