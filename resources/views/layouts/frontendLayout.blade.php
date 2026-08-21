@@ -406,7 +406,7 @@
             }
 
             debounce =  setTimeout(() => {
-                $('.searchResult').slideDown()
+                $('.searchResult').slideDown(1000)
                 // Ajax
                 $.ajax({
                     url:`{{ route('frontend.search') }}`,

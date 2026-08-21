@@ -110,8 +110,8 @@ line-height: 140%;
 color: var(--gray-scale-gray-–-500);
 border: 1px solid var(--gray-scale-gray-–-300);
 border-radius: 4px 0 0 4px;
-gap: 10px;
-width: 80%;
+flex-grow: 1;
+width: auto;
 }
 #headermid form iconify-icon{
 	position: absolute;
@@ -121,13 +121,13 @@ width: 80%;
 }
 #headermid form  button{
 	border-radius: 0 6px 6px 0;
-padding: 14px 24px;
-background: var(--branding-success);
-font-family: var(--font-family);
-font-weight: 600;
-font-size: 14px;
-line-height: 120%;
-color: var(--gray-scale-white);
+    padding: 14px 24px;
+    background: var(--branding-success);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--gray-scale-white);
 }
 #headermid .iconsLove{
 	font-size: 36px;
@@ -886,6 +886,28 @@ justify-content: end;
     border-bottom-right-radius: 46px;
     border-top-right-radius: 46px;
 }
+
+.aboutSocialMedia {
+   margin-left: 40px;
+}
+.aboutSocialMedia ul li a {
+    color: var(--gren-gray-scale-900);
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Recommended to remove default anchor underlines */
+}
+
+.aboutSocialMedia ul li:hover a {
+    background: var(--branding-success);
+}
+
 footer {
     padding: 80px 0 0 0;
     background: var(--gray-scale-gray-–-900);
@@ -2378,31 +2400,45 @@ z-index: 2;
 
 
 
-.searchResult{
+/* Ensure the parent form or wrapper doesn't clip the dropdown */
+#headermid .row {
+    overflow: visible !important;
+}
+
+/* Position the search result dropdown cleanly on top of everything */
+.searchResult {
     position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    width: 100%;
     top: 100%;
-    display: none;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 6px 6px;
+    z-index: 9999; /* This forces it to appear on top of all other page elements */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Controlled by jQuery slideDown/hide */
 }
 
+.searchResult li {
+    padding: 6px 20px;
+    border-bottom: 1px solid #eee;
+}
 
-.searchResult a{
-    color: black;
+.searchResult li a {
+    color: #333;
+    text-decoration: none;
     display: block;
-    padding: 5px 10px;
 }
 
-
-
-
-
-
-
+.searchResult li:hover {
+    background: #f8f9fa;
+}
 
 
 
     /* -------------------------------------------------------------------------- */
+
 
 

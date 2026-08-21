@@ -6,11 +6,13 @@ About us
 
 @section('content')
 <div class="py-4 text-white" style="background: url('{{ asset('frontend/img/about-banner.png') }}') no-repeat center center/cover; background-color: #1a1a1a;">
-    <div class="container">
-        <nav aria-label="breadcrumb">
+    <div class="container ">
+        <nav aria-label="breadcrumb" class="row align-item-center ">
             <ol class="breadcrumb mb-0 align-items-center">
-                <li class="breadcrumb-item"><a href="#" class="text-white-50 text-decoration-none"><i class="bx bx-home-alt"></i></a></li>
-                <li class="breadcrumb-item active text-success fw-medium" aria-current="page" style="color: #00b207 !important;"></li>
+                <li ><a href="{{ route('frontend.index') }}">
+                        <iconify-icon icon="material-symbols:home-outline" width="24" height="24" ></iconify-icon> >
+                    </a></li>
+                <li><a href="{{ route('frontend.about') }}"> About </a></li>
             </ol>
         </nav>
     </div>
@@ -122,7 +124,7 @@ About us
                 <p class="mb-0 text-white-50">Enjoy ultra-fresh produce selected carefully by our dedicated farmers, handling every package with absolute love and care.</p>
             </div>
             <div class="col-md-4 text-md-end">
-                <a href="#" class="btn btn-lg text-white px-4 py-2 fw-medium border-0 transition" style="background-color: #00b207; border-radius: 30px;">Shop Now <i class="bx bx-right-arrow-alt align-middle ms-1"></i></a>
+                <a href="{{ route('frontend.shop') }}" class="btn btn-lg text-white px-4 py-2 fw-medium border-0 transition" style="background-color: #00b207; border-radius: 30px;">Shop Now <i class="bx bx-right-arrow-alt align-middle ms-1"></i></a>
             </div>
         </div>
     </div>
@@ -261,8 +263,8 @@ About us
             </div>
             
             <div class="col-lg-3">
-                <div class="socialMedia">
-                        <ul>
+                <div class="aboutSocialMedia" >
+                        <ul class= d-flex >
                             <li><a href="#">
                                     <iconify-icon icon="ri:facebook-fill"></iconify-icon>
                                 </a></li>
